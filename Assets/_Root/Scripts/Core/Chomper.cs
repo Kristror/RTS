@@ -3,15 +3,17 @@ using UnityEngine;
 
 namespace Core
 {
-    public sealed class Chomper : MonoBehaviour, ISelectable
-    {
+    public sealed class Chomper : MonoBehaviour, ISelectable, IAttackable
+    {        
         public float Health => _health;
         public float MaxHealth => _maxHealth;
+        public Transform PivotPoint => _pivot;
         public Sprite Icon => _icon;
         public Outline OutlineModule => _outline;       
 
         [SerializeField] private float _maxHealth = 100;
         [SerializeField] private Sprite _icon;
+        [SerializeField] private Transform _pivot;
 
         private Outline _outline;
 
@@ -22,21 +24,5 @@ namespace Core
             _outline = gameObject.GetComponent<Outline>();
             _outline.enabled = false;
         }
-        //public override void ExecuteSpecificCommand(IAttackCommand command)
-        //{
-        //    Debug.Log("Attack");
-        //}
-        //public override void ExecuteSpecificCommand(IMoveCommand command)
-        //{
-        //    Debug.Log("Move");
-        //}
-        //public override void ExecuteSpecificCommand(IPatrolCommand command)
-        //{
-        //    Debug.Log("Patrol");
-        //}
-        //public override void ExecuteSpecificCommand(IStopCommand command)
-        //{
-        //    Debug.Log("Stop");
-        //}
     }
 }

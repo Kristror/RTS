@@ -8,7 +8,7 @@ namespace Core.CommandExecutors
 	{
 		public override void ExecuteSpecificCommand(IAttackCommand command)
 		{
-			Debug.Log($"Attack is active");
+			Debug.Log($"{name} attacking {command.Target}");
 		}
 	}
 }

@@ -34,7 +34,21 @@ namespace UserControlSystem.UI.View
             _buttonsByExecutorType
                 .Add(typeof(CommandExecutorBase<IProduceUnitCommand>), _produceUnitButton);
         }
-
+        public void BlockInteractions(ICommandExecutor ce)
+        {
+            UnblockAllInteractions();
+            getButtonGameObjectByType(ce.GetType())
+            .GetComponent<Selectable>().interactable = false;
+        }
+        public void UnblockAllInteractions() => setInteractible(true);
+        private void setInteractible(bool value)
+        {
+            _attackButton.GetComponent<Selectable>().interactable = value;
+            _moveButton.GetComponent<Selectable>().interactable = value;
+            _patrolButton.GetComponent<Selectable>().interactable = value;
+            _stopButton.GetComponent<Selectable>().interactable = value;
+            _produceUnitButton.GetComponent<Selectable>().interactable = value;
+        }
         public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors)
         {
             foreach (var currentExecutor in commandExecutors)
@@ -49,6 +63,14 @@ namespace UserControlSystem.UI.View
                 button.onClick.AddListener(() => OnClick?.Invoke(currentExecutor));
             }
         }
+        private GameObject getButtonGameObjectByType(Type executorInstanceType)
+        {
+            return _buttonsByExecutorType
+                .Where(type => type.Key.IsAssignableFrom(executorInstanceType))
+                .First()
+                .Value;
+        }
+
 
         public void Clear()
         {
