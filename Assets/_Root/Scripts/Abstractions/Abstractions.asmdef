@@ -2,7 +2,8 @@
     "name": "Abstractions",
     "rootNamespace": "",
     "references": [
-        "GUID:ab7aea291e69de4418d372e2bf2f76c4"
+        "GUID:ab7aea291e69de4418d372e2bf2f76c4",
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

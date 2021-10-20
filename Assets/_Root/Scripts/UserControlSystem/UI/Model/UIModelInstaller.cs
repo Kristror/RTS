@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using Abstractions;
 using Abstractions.Commands.CommandsInterfaces;
 using UnityEngine;
 using Utils;
@@ -21,7 +21,9 @@ namespace UserControlSystem
             Container.Bind<SelectableValue>().FromInstance(_selectableValue);
 
             Container.Bind<CommandCreatorBase<IProduceUnitCommand>>()
-                .To<ProduceUnitCommandCommandCreator>().AsTransient();
+                .To<ProduceUnitCommandCommandCreator>().AsTransient(); 
+            Container.Bind<CommandCreatorBase<ISetRallyPointCommand>>()
+                 .To<SetRallyPointCommandCreator>().AsTransient();
             Container.Bind<CommandCreatorBase<IMoveCommand>>()
                 .To<MoveCommandCommandCreator>().AsTransient(); 
             Container.Bind<CommandCreatorBase<IAttackCommand>>()
@@ -32,6 +34,11 @@ namespace UserControlSystem
                    .To<StopCommandCommandCreator>().AsTransient();
 
             Container.Bind<CommandButtonsModel>().AsTransient();
+
+            Container.Bind<BottomCenterModel>().AsTransient();
+
+            Container.Bind<float>().WithId("Chomper").FromInstance(5f);
+            Container.Bind<string>().WithId("Chomper").FromInstance("Chomper");
         }
     }
 }

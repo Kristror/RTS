@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public sealed class Chomper : MonoBehaviour, ISelectable, IAttackable
+    public sealed class Chomper : MonoBehaviour, ISelectable, IAttackable,IUnit
     {        
         public float Health => _health;
         public float MaxHealth => _maxHealth;
