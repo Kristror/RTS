@@ -60,18 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06421ce76c83d06479b22218017f00fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-5203443752067935422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559763356956940871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9791f574db8fe684480ae46de7cc986c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _animator: {fileID: -2030665453665117927}
+  _stopCommandExecutor: {fileID: 4736782636392120629}
 --- !u!114 &-5014117801926174169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8549bfa559f8a418a0ad30a44aea27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2125337758611103298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559763356956940871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9791f574db8fe684480ae46de7cc986c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2171015229714481821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +145,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88f58d2991e79344191548b5be3dc777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stop: {fileID: -5014117801926174169}
+  _animator: {fileID: -2030665453665117927}
+  _stopCommandExecutor: {fileID: 4736782636392120629}
+--- !u!114 &3241550611398280353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559763356956940871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72b48678947d924098057678c85894a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _factionId: 1
+--- !u!114 &3837197855096840718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559763356956940871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773d808b0e2ef6b4ebc84713f8f4cfd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3877222822511576156
@@ -159,7 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: -5203443752067935422}
+  - {fileID: 7740904084118174100}
+  - {fileID: 2125337758611103298}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -197,6 +228,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7740904084118174100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559763356956940871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa9ef2d97de48643bcb32bcde39f86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8526731911552668899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +255,9 @@ MonoBehaviour:
   _maxHealth: 100
   _icon: {fileID: 21300000, guid: 9908913e928c42d4f9f1891893bbc424, type: 3}
   _pivot: {fileID: 4559763356957099623}
---- !u!114 &3837197855096840718
+  _animator: {fileID: -2030665453665117927}
+  _stopCommand: {fileID: 4736782636392120629}
+--- !u!114 &8640414216100578754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,9 +266,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4559763356956940871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773d808b0e2ef6b4ebc84713f8f4cfd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 49895a3d1ab816b46b8a10183e93b65b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damage: 25
 --- !u!1001 &4559763356956974309
 PrefabInstance:
   m_ObjectHideFlags: 0

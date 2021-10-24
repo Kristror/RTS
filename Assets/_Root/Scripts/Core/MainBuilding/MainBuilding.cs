@@ -27,5 +27,17 @@ namespace Core
             _outline = gameObject.GetComponent<Outline>();
             _outline.enabled = false;
         }
+        public void RecieveDamage(int amount)
+        {
+            if (_health <= 0)
+            {
+                return;
+            }
+            _health -= amount;
+            if (_health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
